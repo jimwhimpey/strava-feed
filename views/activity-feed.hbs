@@ -1,0 +1,21 @@
+{{>header}}
+
+<div id="content"></div>
+
+<script type='text/javascript'>
+		
+	// Boot up React
+	React.render(
+		React.createElement(FeedContent, {
+			activities: activities
+		}),
+		document.getElementById('content')
+	);
+	
+</script>
+
+<div class="logout">
+	<a href="/logout">&larr; Logout</a>
+</div>
+
+{{>footer}}
