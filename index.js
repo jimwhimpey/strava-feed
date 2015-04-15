@@ -69,58 +69,31 @@
 			var activityRequest = https.get({
 				host: 'www.strava.com',
 				port: 443,
-				path: '/api/v3/athlete/activities?after=' + moment(moment().year() + "-01-01").format("X"),
+				path: '/api/v3/activities/following',
 				headers: {
 					Authorization: 'Bearer ' + req.cookies.annualMileageToken
 				}
 			}, function(activityResponse) {
 				
 				var data = "",
-				    ytdDistance = 0,
-				    ytdElevation = 0,
-				    ytdDistancePerDay = 0,
-				    ytdElevationPerDay = 0,
-				    dayOfYear = moment().dayOfYear(),
-				    monthOfYear = moment().month() + 1,
-				    daysInYear = (moment().isLeapYear()) ? 366 : 365,
-				    daysLeftInYear = daysInYear - dayOfYear,
-				    rideData;
+				    rideData,
+				    activities;
 
 				activityResponse.on('data', function (chunk) { data += chunk; });
 				
 				activityResponse.on('end', function () {
 					
-					// Loop through all the activities
-					JSON.parse(data).forEach(function(activity) {
-						
-						// Only if this activity is a ride
-						if (activity.type === "Ride") {
-							ytdDistance = ytdDistance + activity.distance;
-							ytdElevation = ytdElevation + activity.total_elevation_gain;
-						}
-						
-					});
+					activities = JSON.parse(data);
 					
-					// Calculate YTD
-					ytdDistancePerDay = ytdDistance / dayOfYear;
-					ytdElevationPerDay = ytdElevation / dayOfYear;
-
-					rideData = {
-						ytdDistance: ytdDistance,
-						ytdElevation: ytdElevation,
-						ytdDistancePerDay: ytdDistancePerDay,
-						ytdElevationPerDay: ytdElevationPerDay,
-						ytdDistancePerWeek: ytdDistancePerDay * 7,
-						ytdElevationPerWeek: ytdElevationPerDay * 7,
-						daysLeftInYear: daysLeftInYear,
-						projectedAnnualDistance: ytdDistancePerDay * daysLeftInYear,
-						projectedAnnualElevation: ytdElevationPerDay * daysLeftInYear
-					};
+					// Loop through all the activities
+					// JSON.parse(data).forEach(function(activity) {
+					// 	activities.push(activity);
+					// });
 
 					// Put it all out on the page
-					pageResponse.render('mileage-page', {
-						rideData: rideData,
-						rideDataForTemplate: JSON.stringify(rideData)
+					pageResponse.render('activity-feed', {
+						activities: activities,
+						activitiesForTemplate: JSON.stringify(activities)
 					});
 					
 				});
