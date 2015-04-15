@@ -1,0 +1,159 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: missionBold;
+  src: url(/fonts/MissionGothicBold.otf); }
+
+@font-face {
+  font-family: missionRegular;
+  src: url(/fonts/MissionGothicRegular.otf); }
+
+@font-face {
+  font-family: missionThin;
+  src: url(/fonts/MissionGothicThin.otf); }
+
+@font-face {
+  font-family: enamel;
+  src: url(/fonts/Enamel.ttf); }
+
+body {
+  background: #c6f3b7; }
+
+h1 {
+  font-family: missionBold, Helvetica, sans-serif;
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 0.8;
+  padding: 20px;
+  text-shadow: #fff 1px 1px 0; }
+
+.unitSwitcher {
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #bcf0aa;
+  color: rgba(0, 0, 0, 0.7); }
+  .unitSwitcher button {
+    background: none;
+    border: none;
+    font-family: missionBold, Helvetica, sans-serif;
+    text-transform: uppercase; }
+    .unitSwitcher button:hover:not(.selected) {
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.05); }
+    .unitSwitcher button.selected {
+      background: rgba(0, 0, 0, 0.1); }
+
+.mileageData,
+.mileageProjector {
+  padding: 20px;
+  background: #b2ee9d;
+  font-family: missionThin, Helvetica, sans-serif;
+  line-height: 1.5; }
+  .mileageData .gap td,
+  .mileageData p,
+  .mileageProjector .gap td,
+  .mileageProjector p {
+    margin-bottom: 15px; }
+  .mileageData table,
+  .mileageProjector table {
+    table-layout: fixed; }
+  .mileageData .data,
+  .mileageProjector .data {
+    font-family: Menlo, Monaco, Courier, monospace;
+    font-weight: bold;
+    font-size: 13px;
+    display: inline-block;
+    padding: 3px 10px 3px 0;
+    text-align: right;
+    min-width: 80px; }
+
+.mileageProjector {
+  padding: 0; }
+  .mileageProjector .mileage {
+    padding: 20px;
+    background: #a7ec90; }
+  .mileageProjector .elevation {
+    padding: 20px;
+    background: #9de983; }
+  .mileageProjector p {
+    font-family: missionRegular, Helvetica, sans-serif;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 0.6); }
+    .mileageProjector p input {
+      font-family: Menlo, Monaco, Courier, monospace;
+      font-size: 13px;
+      padding: 3px 5px;
+      width: 80px;
+      margin-right: 3px;
+      border: 1px solid #48bd21;
+      background: rgba(255, 255, 255, 0.4); }
+    .mileageProjector p .units {
+      color: black; }
+
+.logout {
+  padding: 20px;
+  background: #93e776; }
+  .logout a {
+    font-family: missionRegular, Helvetica, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7); }
+    .logout a:hover {
+      color: black; }
+
+.stravaConnect {
+  padding: 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #a4eb8c; }
+  .stravaConnect p {
+    font-family: missionRegular, Helvetica, sans-serif;
+    margin: 0 0 15px 0;
+    color: rgba(0, 0, 0, 0.6); }
+
+.footer {
+  padding: 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: #88e569;
+  color: #c6f3b7;
+  font-family: missionThin, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.3; }
+  .footer a {
+    display: block;
+    font-family: enamel, Helvetica, sans-serif;
+    font-size: 40px;
+    color: #c6f3b7;
+    text-decoration: none; }
+    .footer a:hover {
+      color: white; }
