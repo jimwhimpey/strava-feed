@@ -13,9 +13,15 @@ var Activity = React.createClass({
 	render: function() {
 		
 		console.log(this.props.activity);
+		var mapImageURL = "http://maps.googleapis.com/maps/api/staticmap?sensor=false&maptype=%7B0%7D&size=150x150&path=weight:3%7Ccolor:pink%7Cenc:" + this.props.activity.map.summary_polyline,
+		    activityURL = "https://www.strava.com/activities/" + this.props.activity.id;
 		
 		return (
-			<div>{this.props.activity.name}</div>
+			<div className="activity">
+				<h2><a href={activityURL}>{this.props.activity.name}</a></h2>
+				<p className="who">{this.props.activity.athlete.firstname} {this.props.activity.athlete.lastname}</p>
+				<p><img src={mapImageURL} /></p>
+			</div>
 		);
 		
 	}

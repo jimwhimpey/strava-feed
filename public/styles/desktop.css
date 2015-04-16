@@ -43,7 +43,7 @@ table {
   src: url(/fonts/Enamel.ttf); }
 
 body {
-  background: #c6f3b7; }
+  background: white; }
 
 h1 {
   font-family: missionBold, Helvetica, sans-serif;
@@ -58,7 +58,7 @@ h1 {
   padding: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: #bcf0aa;
+  background: white;
   color: rgba(0, 0, 0, 0.7); }
   .unitSwitcher button {
     background: none;
@@ -71,10 +71,13 @@ h1 {
     .unitSwitcher button.selected {
       background: rgba(0, 0, 0, 0.1); }
 
+.activity {
+  margin: 0 0 20px 0; }
+
 .mileageData,
 .mileageProjector {
   padding: 20px;
-  background: #b2ee9d;
+  background: white;
   font-family: missionThin, Helvetica, sans-serif;
   line-height: 1.5; }
   .mileageData .gap td,
@@ -99,10 +102,10 @@ h1 {
   padding: 0; }
   .mileageProjector .mileage {
     padding: 20px;
-    background: #a7ec90; }
+    background: white; }
   .mileageProjector .elevation {
     padding: 20px;
-    background: #9de983; }
+    background: white; }
   .mileageProjector p {
     font-family: missionRegular, Helvetica, sans-serif;
     line-height: 1.2;
@@ -113,14 +116,14 @@ h1 {
       padding: 3px 5px;
       width: 80px;
       margin-right: 3px;
-      border: 1px solid #48bd21;
+      border: 1px solid white;
       background: rgba(255, 255, 255, 0.4); }
     .mileageProjector p .units {
       color: black; }
 
 .logout {
   padding: 20px;
-  background: #93e776; }
+  background: white; }
   .logout a {
     font-family: missionRegular, Helvetica, sans-serif;
     font-size: 14px;
@@ -134,7 +137,7 @@ h1 {
   padding: 20px;
   padding-top: 60px;
   padding-bottom: 60px;
-  background: #a4eb8c; }
+  background: white; }
   .stravaConnect p {
     font-family: missionRegular, Helvetica, sans-serif;
     margin: 0 0 15px 0;
@@ -144,8 +147,8 @@ h1 {
   padding: 20px;
   padding-top: 60px;
   padding-bottom: 60px;
-  background: #88e569;
-  color: #c6f3b7;
+  background: white;
+  color: white;
   font-family: missionThin, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.3; }
@@ -153,7 +156,7 @@ h1 {
     display: block;
     font-family: enamel, Helvetica, sans-serif;
     font-size: 40px;
-    color: #c6f3b7;
+    color: white;
     text-decoration: none; }
     .footer a:hover {
       color: white; }

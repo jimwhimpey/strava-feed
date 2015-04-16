@@ -1,4 +1,4 @@
-var FeedPage = React.createClass({displayName: "FeedPage",
+var FeedPage = React.createClass({
 	
 	getInitialState: function() {
 		// Read from local storage if we have it
@@ -16,9 +16,9 @@ var FeedPage = React.createClass({displayName: "FeedPage",
 	
 	render: function() {
 		return (
-			React.createElement("div", null, 
-				React.createElement(Feed, {activities: this.props.activities, isMetric: this.state.isMetric})
-			)
+			<div>
+				<Feed activities={this.props.activities} isMetric={this.state.isMetric} />
+			</div>
 		);
 	}
 });
