@@ -17,7 +17,7 @@ var FeedContent = React.createClass({displayName: "FeedContent",
 	render: function() {
 		return (
 			React.createElement("div", null, 
-				React.createElement(FeedData, {activities: this.props.activities, isMetric: this.state.isMetric})
+				React.createElement(Feed, {activities: this.props.activities, isMetric: this.state.isMetric})
 			)
 		);
 	}

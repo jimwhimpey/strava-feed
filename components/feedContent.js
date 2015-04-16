@@ -17,7 +17,7 @@ var FeedContent = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<FeedData activities={this.props.activities} isMetric={this.state.isMetric} />
+				<Feed activities={this.props.activities} isMetric={this.state.isMetric} />
 			</div>
 		);
 	}
