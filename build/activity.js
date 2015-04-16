@@ -20,7 +20,12 @@ var Activity = React.createClass({
 			React.createElement("div", {className: "activity"}, 
 				React.createElement("h2", null, React.createElement("a", {href: activityURL}, this.props.activity.name)), 
 				React.createElement("p", {className: "who"}, this.props.activity.athlete.firstname, " ", this.props.activity.athlete.lastname), 
-				React.createElement("p", null, React.createElement("img", {src: mapImageURL}))
+				React.createElement("p", null, React.createElement("img", {src: mapImageURL})), 
+				React.createElement("ul", null, 
+					React.createElement("li", null, "Time started: ", this.props.activity.start_date_local), 
+					React.createElement("li", null, "Ride time: ", this.props.activity.moving_time), 
+					React.createElement("li", null, "Ride distance: ", this.props.activity.distance)
+				)
 			)
 		);
 		

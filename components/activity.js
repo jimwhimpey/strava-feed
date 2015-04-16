@@ -21,6 +21,11 @@ var Activity = React.createClass({
 				<h2><a href={activityURL}>{this.props.activity.name}</a></h2>
 				<p className="who">{this.props.activity.athlete.firstname} {this.props.activity.athlete.lastname}</p>
 				<p><img src={mapImageURL} /></p>
+				<ul>
+					<li>Time started: {this.props.activity.start_date_local}</li>
+					<li>Ride time: {this.props.activity.moving_time}</li>
+					<li>Ride distance: {this.props.activity.distance}</li>
+				</ul>
 			</div>
 		);
 		
