@@ -93,7 +93,8 @@
 					// Put it all out on the page
 					pageResponse.render('activity-feed', {
 						activities: activities,
-						activitiesForTemplate: JSON.stringify(activities)
+						activitiesForTemplate: JSON.stringify(activities),
+						accessToken: req.cookies.annualMileageToken
 					});
 					
 				});
@@ -149,6 +150,40 @@
 		tokenRequest.write(postData);
 		tokenRequest.end();
 
+	});
+	
+	// Offers API access to the client
+	app.use('/activity/:id', function(req, res) {
+		
+		// Get this user's list of activities from the start of the year
+		var activityRequest = https.get({
+			host: 'www.strava.com',
+			port: 443,
+			path: '/api/v3/activities/' + req.params.id,
+			headers: {
+				Authorization: 'Bearer ' + req.cookies.annualMileageToken
+			}
+		}, function(activityResponse) {
+			
+			var data = "",
+			    activityData;
+
+			activityResponse.on('data', function (chunk) { data += chunk; });
+			
+			activityResponse.on('end', function () {
+				
+				activities = JSON.parse(data);
+
+				// Put it all out on the page
+				pageResponse.render('activity-feed', {
+					activities: activities,
+					activitiesForTemplate: JSON.stringify(activities)
+				});
+				
+			});
+
+		});
+		
 	});
 	
 	// Just deletes the cookie

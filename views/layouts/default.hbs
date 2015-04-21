@@ -13,6 +13,7 @@
 
 		<script charset='utf-8' src='/scripts/numeral.min.js' type='text/javascript'></script>
 		<script charset='utf-8' src="/scripts/react.js" type='text/javascript'></script>
+		<script charset='utf-8' src="/scripts/zepto.min.js" type='text/javascript'></script>
 		
 		<script charset='utf-8' src='/scripts/helpers.js' type='text/javascript'></script>
 		
@@ -25,6 +26,7 @@
 			{{#if activitiesForTemplate}}
 				// Make this data available to our client side
 				var activities = {{{activitiesForTemplate}}};
+				var accessToken = "{{accessToken}}";
 			{{/if}}
 			
 		</script>
